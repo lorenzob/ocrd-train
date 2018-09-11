@@ -12,6 +12,9 @@ MODEL_NAME = foo
 # Name of the model to continue from. Default: '$(CONTINUE_FROM)'
 CONTINUE_FROM = 
 
+# Number of training iterations (you can override this from command line)
+ITERATIONS = 10000
+
 # No of cores to use for compiling leptonica/tesseract. Default: $(CORES)
 CORES = 4
 
@@ -134,7 +137,7 @@ data/checkpoints/$(MODEL_NAME)_checkpoint: unicharset lists proto-model
 	  --learning_rate 20e-4 \
 	  --train_listfile data/list.train \
 	  --eval_listfile data/list.eval \
-	  --max_iterations 10000
+	  --max_iterations $(ITERATIONS)
 
 data/$(MODEL_NAME).traineddata: data/checkpoints/$(MODEL_NAME)_checkpoint
 	lstmtraining \
