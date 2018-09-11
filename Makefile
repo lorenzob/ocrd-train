@@ -12,7 +12,7 @@ MODEL_NAME = foo
 # Name of the model to continue from. Default: '$(CONTINUE_FROM)'
 CONTINUE_FROM = 
 
-# Number of training iterations (you can override this from command line)
+# No of training iterations
 ITERATIONS = 10000
 
 # No of cores to use for compiling leptonica/tesseract. Default: $(CORES)
@@ -62,6 +62,7 @@ help:
 	@echo ""
 	@echo "    MODEL_NAME         Name of the model to be built. Default: $(MODEL_NAME)"
 	@echo "    CONTINUE_FROM      Name of the model to continue from. Default: $(CONTINUE_FROM)"
+	@echo "    ITERATIONS         No of training iterations. Default: $(ITERATIONS)"
 	@echo "    CORES              No of cores to use for compiling leptonica/tesseract. Default: $(CORES)"
 	@echo "    LEPTONICA_VERSION  Leptonica version. Default: $(LEPTONICA_VERSION)"
 	@echo "    TESSERACT_VERSION  Tesseract commit. Default: $(TESSERACT_VERSION)"
